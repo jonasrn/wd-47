@@ -1,3 +1,5 @@
+(function(){
+
 var inputs = document.querySelectorAll("#carrinho input");
 
 for (var i = 0; i< inputs.length; i++){
@@ -15,15 +17,18 @@ for (var i = 0; i< inputs.length; i++){
 		
 		var quantidade = input.value;
 		
-		var valorUnitario = realParaNumber(spanValorUnitario.textContent);
+		var valorUnitario = formatadorMoeda.realParaNumber(spanValorUnitario.textContent);
 		
 		console.log(valorUnitario);
 		
 		var novoTotal = quantidade * valorUnitario;
-		spanValorTotal.textContent = numberParaReal(novoTotal);
+		spanValorTotal.textContent = formatadorMoeda.numberParaReal(novoTotal);
 		
 		
 		
 	});
 	
 }
+
+
+})();
